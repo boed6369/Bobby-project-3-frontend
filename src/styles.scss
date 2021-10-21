@@ -4,6 +4,7 @@
 $maincolor: black;
 $contrastcolor: white;
 
+
 @mixin white-text-black-bg {
   color: $contrastcolor;
   background-color: $maincolor;
@@ -31,4 +32,18 @@ nav {
       font-size: large;
     }
   }
+}
+
+.faction {
+    color:black;
+    text-align: center;
+    h1,h2 {
+        color:white;
+        background-color:black;
+    }
+}
+.main{
+    .faction{
+        background-color: lightgrey;
+    }
 }

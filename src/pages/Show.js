@@ -10,7 +10,7 @@ function Show(props) {
         <h3>{fac.oFactionRelic}</h3>
         <h2>General Ability</h2>
         <h3>{fac.oFactionWarlord}</h3>
-        <h2>Comman Ability</h2>
+        <h2>Command Ability</h2>
         <h3>{fac.oFactionCommand}</h3>
         <h2>Lore</h2>
         <h3>{fac.oFactionLore}</h3>
