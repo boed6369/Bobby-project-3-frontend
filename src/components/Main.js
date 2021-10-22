@@ -23,9 +23,27 @@ function Main(props) {
           },
           body: JSON.stringify(fac),
         });
-        // update list of people
+
         getFaction();
       };
+
+      const updateFaction = async (fac, id) => {
+          await fetch(URL + id, {
+              method: "PUT", 
+              headers: {
+                "Content-Type": "Application/json",
+              },
+              body: JSON.stringify(fac)
+          })
+          getFaction()
+      }
+
+      const deleteFaction = async id => {
+        await fetch(URL + id, {
+            method: "DELETE", 
+        })
+        getFaction()
+    }
 
     useEffect(() => getFaction(), [])
 
@@ -42,6 +60,8 @@ function Main(props) {
                     render={(rp) => (
                         <Show
                         faction={faction}
+                        updateFaction={updateFaction}
+                        deleteFaction={deleteFaction}
                             {...rp}
                         />
                     )}

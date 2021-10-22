@@ -14,7 +14,7 @@ function Index(props) {
   })
 
   const handleChange = (event) => {
-    setNewFac({ ...newFac, [event.target.oFactionName]: event.target.value })
+    setNewFac({ ...newFac, [event.target.name]: event.target.value })
   }
 
   const handleSubmit = (event) => {
