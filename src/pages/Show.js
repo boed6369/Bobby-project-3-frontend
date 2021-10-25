@@ -1,37 +1,43 @@
 
-import { useState} from "react"
+import { useState } from "react"
 
 function Show(props) {
-    const id = props.match.params.id
-    const faction = props.faction
-    const fac = faction.find(p => p._id === id)
-  
-    const [editFaction, setEditFaction] = useState(fac)
+  const id = props.match.params.id
+  const faction = props.faction
+  const fac = faction.find(p => p._id === id)
 
-    const handleChange = event => {
-      setEditFaction({ ...editFaction, [event.target.name]: event.target.value})
-    }
+  const [editFaction, setEditFaction] = useState(fac)
 
-    const handleSubmit = event => {
-      event.preventDefault();
-      props.updateFaction(editFaction, fac._id);
+  const handleChange = event => {
+    setEditFaction({ ...editFaction, [event.target.name]: event.target.value })
+  }
+// having trouble here
+  const handleSubmit = event => {
+    event.preventDefault();
+    props.updateFaction(editFaction, fac._id);
+    props.history.push("/");
+  }
 
-      props.history.push("/");
-    }
+  const removeFaction = event => {
+    props.deleteFaction(faction._id);
+    props.history.push("/")
+  }
 
-    return (
-      <div className="faction">
-        <h1>{fac.oFactionName}</h1>
-        <h2>Relic</h2>
-        <h3>{fac.oFactionRelic}</h3>
-        <h2>General Ability</h2>
-        <h3>{fac.oFactionWarlord}</h3>
-        <h2>Comman Ability</h2>
-        <h3>{fac.oFactionCommand}</h3>
-        <h2>Lore</h2>
-        <h3>{fac.oFactionLore}</h3>
-
-        <form className="submit" onSubmit={handleSubmit}>
+  return (
+    <div className="faction">
+      <h1>{fac.oFactionName}</h1>
+      <h2>Relic</h2>
+      <h3>{fac.oFactionRelic}</h3>
+      <h2>General Ability</h2>
+      <h3>{fac.oFactionWarlord}</h3>
+      <h2>Comman Ability</h2>
+      <h3>{fac.oFactionCommand}</h3>
+      <h2>Lore</h2>
+      <h3>{fac.oFactionLore}</h3>
+      <button id="delete" onClick={removeFaction}>
+        DELETE
+      </button>
+      <form className="submit" onSubmit={handleSubmit}>
         <input
           type="text"
           value={editFaction.oFactionName}
@@ -71,8 +77,8 @@ function Show(props) {
 
         <input type="submit" value="Update" />
       </form>
-      </div>
-    )
-  }
-  
-  export default Show
+    </div>
+  )
+}
+
+export default Show

@@ -33,7 +33,7 @@ function Main(props) {
               headers: {
                 "Content-Type": "Application/json",
               },
-              body: JSON.stringify(fac)
+              body: JSON.stringify(fac),
           })
           getFaction()
       }
