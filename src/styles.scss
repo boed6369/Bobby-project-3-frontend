@@ -1,41 +1,35 @@
-// --------------------------
-// VARIABLES
-// --------------------------
-$maincolor: black;
-$contrastcolor: white;
+
+// $maincolor: black;
+// $contrastcolor: white;
 
 
-@mixin white-text-black-bg {
-  color: $contrastcolor;
-  background-color: $maincolor;
-}
+// @mixin white-text-black-bg {
+//   color: $contrastcolor;
+//   background-color: $maincolor;
+// }
 
-@mixin black-test-white-bg {
-  color: $maincolor;
-  background-color: $contrastcolor;
-}
+// @mixin black-test-white-bg {
+//   color: $maincolor;
+//   background-color: $contrastcolor;
+// }
+// nav {
+//   @include white-text-black-bg;
+//   display: flex;
+//   justify-content: flex-start;
 
-// --------------------------
-// Header
-// --------------------------
+//   a {
+//     @include white-text-black-bg;
 
-nav {
-  @include white-text-black-bg;
-  display: flex;
-  justify-content: flex-start;
-
-  a {
-    @include white-text-black-bg;
-
-    div {
-      margin: 10px;
-      font-size: large;
-    }
-  }
-}
+//     div {
+//       margin: 10px;
+//       font-size: large;
+//     }
+//   }
+// }
 
 .faction {
-    color:black;
+    color: black;
+    background-color: lightgrey;
     text-align: center;
     h2 {
         color:white;
@@ -43,13 +37,15 @@ nav {
     }
     h1 {
         color:black;
-        background-color:lightgrey;
+        // background-color:lightgrey;
     }
 }
 
 
 .main{
   background-color: lightgrey;
+  margin-top:40px;
+
     h1{
         background-color: black;
         color:white;
@@ -60,14 +56,59 @@ nav {
       color:white;
       display: flex;
     }
-
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      border-radius: 20px;
+    }
 }
-
+.create {
+  margin: 0px 20% 0px 20% ;
+  .header{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 20px;
+  }
+}
 .submit{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
   input{
     width: 100%;
     text-align: center;
-    // margin-left: 40%;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
+}
+input[type=text] {
+  border:none;
+  background-color: lightgrey;
+  border-bottom: 2px solid black ;
+}
+.createButton {
+  background:darkgrey;
+  font-size:30px;
+  transition: .6s ease-in;
+}
+
+.createButton:hover{
+  background-color:black;
+  color:white;
+}
+
+.nav{
+  position: fixed;
+  background-color: black;
+  color:white;
+  width: 100%;
+  padding-top:10px;
+  padding-bottom: 10px;
+  margin-top: 0%;
+}
+
+app{
+  background-color: lightgrey;
 }

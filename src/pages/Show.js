@@ -1,6 +1,4 @@
-
 import { useState } from "react"
-
 function Show(props) {
   const id = props.match.params.id
   const faction = props.faction
@@ -11,15 +9,15 @@ function Show(props) {
   const handleChange = event => {
     setEditFaction({ ...editFaction, [event.target.name]: event.target.value })
   }
-// having trouble here
+  // having trouble here
   const handleSubmit = event => {
     event.preventDefault();
-    props.updateFaction(editFaction, fac._id);
+    props.updateFaction(editFaction);
     props.history.push("/");
   }
 
-  const removeFaction = event => {
-    props.deleteFaction(faction._id);
+  const removeFaction = () => {
+    props.deleteFaction(fac._id);
     props.history.push("/")
   }
 
@@ -30,12 +28,14 @@ function Show(props) {
       <h3>{fac.oFactionRelic}</h3>
       <h2>General Ability</h2>
       <h3>{fac.oFactionWarlord}</h3>
+      <h2>Faction Ability</h2>
+      <h3>{fac.oFactionAbilites}</h3>
       <h2>Comman Ability</h2>
       <h3>{fac.oFactionCommand}</h3>
       <h2>Lore</h2>
       <h3>{fac.oFactionLore}</h3>
       <button id="delete" onClick={removeFaction}>
-        DELETE
+        Delete entry
       </button>
       <form className="submit" onSubmit={handleSubmit}>
         <input

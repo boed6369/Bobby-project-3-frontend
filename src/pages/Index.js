@@ -1,4 +1,4 @@
-import { findByPlaceholderText } from "@testing-library/dom";
+
 import { useState } from "react";
 import { Link } from "react-router-dom"
 
@@ -45,7 +45,8 @@ function Index(props) {
   };
 
   return (
-    <section>
+    <section className="create">
+      <h1 className="header"> Create Your Own Legion </h1>
       <form className="submit" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -84,7 +85,7 @@ function Index(props) {
           placeholder="Lore"
           onChange={handleChange} /><br></br>
 
-        <input type="submit" value="Create Sub Faction" />
+        <input className="createButton" type="submit" value="Create Sub Faction" />
       </form>
       {props.faction ? loaded() : loading()};
     </section>
