@@ -3,12 +3,13 @@
 #Age of Sigmar Legion Creator
 Allows users to Create and delete new Fantasy Legions.For now It only create new legions for one faction. However I will be implementing ore in the future.
 
-## Tecknologies Uesed 
+## Tecknologies Used 
 * React.js
 * JavaScript
 * HTML
 * SCSS
 * MongoDB
+
 
 ## Wireframe
 ![Wireframe](https://imgur.com/JqjFlrA.png)
@@ -25,3 +26,5 @@ Allows users to Create and delete new Fantasy Legions.For now It only create new
 ## Future Enhancments
 * parallax styling
 * Make a sidebar conaining all major factions, allowing the user to switch between them
+* Athentication 
+* Improved styling 
