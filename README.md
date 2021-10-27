@@ -1,7 +1,7 @@
 # Bobby-project-3
 
 #Age of Sigmar Legion Creator
-Allows users to Create and delete new Fantasy Legions 
+Allows users to Create and delete new Fantasy Legions.For now It only create new legions for one faction. However I will be implementing ore in the future.
 
 ## Tecknologies Uesed 
 * React.js
